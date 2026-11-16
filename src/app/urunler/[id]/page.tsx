@@ -19,64 +19,64 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   }
 
   return (
-    <div className="py-16 bg-slate-50 text-slate-900">
+    <div className="py-10 sm:py-16 bg-slate-50 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/urunler"
-          className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-amber-600 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-amber-600 mb-6 sm:mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Tüm PanaCast Modellerine Dön</span>
         </Link>
 
         {/* Product Hero Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12 sm:mb-16">
           {/* Left: Product Image */}
-          <div className="lg:col-span-6 bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 flex items-center justify-center relative shadow-xl">
+          <div className="lg:col-span-6 bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-6 sm:p-12 flex items-center justify-center relative shadow-lg sm:shadow-xl min-h-[260px] sm:min-h-[380px]">
             {product.badge && (
-              <span className="absolute top-6 left-6 text-xs font-black px-3 py-1 bg-[#FFD100] text-slate-950 rounded-full shadow-sm border border-amber-300">
+              <span className="absolute top-4 left-4 sm:top-6 sm:left-6 text-[10px] sm:text-xs font-black px-2.5 sm:px-3 py-1 bg-[#FFD100] text-slate-950 rounded-full shadow-xs border border-amber-300">
                 {product.badge}
               </span>
             )}
             <img
               src={product.imageUrl}
               alt={product.model}
-              className="max-h-[380px] w-auto object-contain filter drop-shadow-xl"
+              className="max-h-[220px] sm:max-h-[380px] w-auto max-w-full object-contain filter drop-shadow-xl"
             />
           </div>
 
           {/* Right: Product Info & Actions */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
             <div>
               <span className="text-xs font-black text-amber-600 uppercase tracking-wider block mb-1">
                 {product.subcategory}
               </span>
-              <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              <h1 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
                 {product.model}
               </h1>
-              <p className="text-base text-slate-600 mt-4 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-slate-600 mt-3 sm:mt-4 leading-relaxed font-normal">
                 {product.fullDescription || product.shortDescription}
               </p>
             </div>
 
             {product.roomSize && (
-              <div className="flex items-center gap-2 p-3 bg-white border border-slate-200 rounded-xl text-xs text-slate-700 shadow-sm">
+              <div className="flex items-center gap-2 p-3 bg-white border border-slate-200 rounded-xl text-xs text-slate-700 shadow-xs">
                 <Users className="w-4 h-4 text-amber-600" />
                 <span>Önerilen Toplantı Odası: <strong className="text-slate-900">{product.roomSize}</strong></span>
               </div>
             )}
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a
                 href="#lead-form"
-                className="flex-1 text-center bg-[#FFD100] hover:bg-[#E6BC00] text-slate-950 font-black text-sm py-4 rounded-xl transition-all shadow-lg shadow-amber-400/25"
+                className="flex-1 text-center bg-[#FFD100] hover:bg-[#E6BC00] text-slate-950 font-black text-sm py-3.5 sm:py-4 rounded-xl transition-all shadow-md shadow-amber-400/20"
               >
                 Fiyat Teklifi & Demo İste
               </a>
               <Link
                 href="/karsilastir"
-                className="flex-1 text-center bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm py-4 rounded-xl border border-slate-300 shadow-sm transition-colors"
+                className="flex-1 text-center bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm py-3.5 sm:py-4 rounded-xl border border-slate-300 shadow-xs transition-colors"
               >
                 Diğer Sistemlerle Karşılaştır
               </Link>

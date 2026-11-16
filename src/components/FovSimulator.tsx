@@ -19,36 +19,36 @@ export default function FovSimulator() {
   ];
 
   return (
-    <section id="fov-simulator" className="py-24 bg-slate-50 border-b border-slate-200 text-slate-900 relative">
+    <section id="fov-simulator" className="py-14 sm:py-24 bg-slate-50 border-b border-slate-200 text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-amber-300 text-xs font-bold text-amber-700 mb-3 shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-amber-300 text-xs font-bold text-amber-700 mb-3 shadow-xs">
             <Layers className="w-3.5 h-3.5 text-amber-500" />
             <span>İnteraktif Görüş Açısı Deneyimi</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
             Standart 120° Kamera vs. <span className="text-amber-600">180° Jabra PanaCast</span>
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-600 text-xs sm:text-base">
             Geleneksel web kameraları ve video barlar dar açıları nedeniyle masanın köşelerinde oturanları keser. Kaydırıcıyı çekerek aradaki farkı anında görün.
           </p>
         </div>
 
         {/* Simulator Box */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
+        <div className="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-10 shadow-lg sm:shadow-xl">
           {/* Controls Bar */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 pb-6 sm:pb-8 border-b border-slate-100">
             <div>
-              <span className="text-xs text-slate-500 uppercase tracking-widest font-bold block mb-1">
+              <span className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-bold block mb-1">
                 Kamera Görüş Açısı (FOV)
               </span>
               <div className="flex items-center gap-3">
-                <span className={`text-4xl font-black ${isPanaCast ? "text-amber-600" : "text-amber-500"}`}>
+                <span className={`text-3xl sm:text-4xl font-black ${isPanaCast ? "text-amber-600" : "text-amber-500"}`}>
                   {fov}°
                 </span>
-                <span className="text-xs px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold border border-slate-200">
-                  {fov <= 120 ? "Geleneksel Dar Açı" : fov < 180 ? "Geniş Açı" : "Jabra PanaCast 180° Panoramik"}
+                <span className="text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-bold border border-slate-200">
+                  {fov <= 120 ? "Geleneksel Dar Açı" : fov < 180 ? "Geniş Açı" : "Jabra 180° Panoramik"}
                 </span>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function FovSimulator() {
             <div className="flex gap-2">
               <button
                 onClick={() => setFov(120)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`flex-1 sm:flex-none px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
                   fov === 120 ? "bg-red-50 text-red-600 border border-red-200" : "bg-slate-100 text-slate-600 hover:text-slate-900"
                 }`}
               >
@@ -83,11 +83,11 @@ export default function FovSimulator() {
               </button>
               <button
                 onClick={() => setFov(180)}
-                className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
+                className={`flex-1 sm:flex-none px-3.5 py-2 rounded-xl text-xs font-black transition-all ${
                   fov === 180 ? "bg-[#FFD100] text-slate-950 shadow-md shadow-amber-400/20" : "bg-slate-100 text-slate-600 hover:text-slate-900"
                 }`}
               >
-                180° Jabra PanaCast
+                180° PanaCast
               </button>
             </div>
           </div>

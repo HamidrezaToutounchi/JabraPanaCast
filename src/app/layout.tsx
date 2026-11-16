@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: "Jabra PanaCast Türkiye — 180° Panoramik 4K Video Konferans Sistemleri",
@@ -16,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className="scroll-smooth">
-      <body className="bg-[#0C0C0E] text-[#F4F4F6] min-h-screen flex flex-col antialiased">
+      <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased overflow-x-hidden selection:bg-amber-300 selection:text-slate-950">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

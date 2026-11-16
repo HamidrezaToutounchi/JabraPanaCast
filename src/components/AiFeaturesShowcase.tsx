@@ -76,25 +76,25 @@ export default function AiFeaturesShowcase() {
   const current = features[activeTab];
 
   return (
-    <section id="ai-features" className="py-24 bg-white border-b border-slate-200 text-slate-900 relative">
+    <section id="ai-features" className="py-14 sm:py-24 bg-white border-b border-slate-200 text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-amber-800 mb-3 shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-xs font-bold text-amber-800 mb-3 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span>Dahili 9 Edge AI İşlemcisi</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
             Gelişmiş Yapay Zeka Özellikleri ile{" "}
             <span className="text-amber-600">Akıllı Toplantı Odaları</span>
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-600 text-xs sm:text-base">
             Jabra PanaCast 50, oda içindeki her hareketi ve sesi işleyen güçlü yapay zeka algoritmalarıyla toplantı deneyimini tamamen otomatikleştirir.
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-8 sm:mb-10">
           {features.map((feat, index) => {
             const Icon = feat.icon;
             const isSelected = activeTab === index;
@@ -102,22 +102,22 @@ export default function AiFeaturesShowcase() {
               <button
                 key={feat.id}
                 onClick={() => setActiveTab(index)}
-                className={`p-4 rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between ${
+                className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between ${
                   isSelected
-                    ? "bg-amber-50/60 border-amber-400 shadow-md scale-[1.02]"
+                    ? "bg-amber-50/70 border-amber-400 shadow-md scale-[1.01]"
                     : "bg-slate-50 border-slate-200 hover:bg-slate-100 hover:border-slate-300"
                 }`}
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
                   <div
-                    className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                    className={`w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center ${
                       isSelected ? "bg-[#FFD100] text-slate-950 font-black" : "bg-slate-200 text-slate-600"
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <span
-                    className={`text-[10px] font-black px-2 py-0.5 rounded-full ${
+                    className={`text-[9px] sm:text-[10px] font-black px-1.5 sm:px-2 py-0.5 rounded-full ${
                       isSelected ? "bg-amber-200 text-amber-900" : "bg-slate-200 text-slate-500"
                     }`}
                   >
@@ -125,8 +125,8 @@ export default function AiFeaturesShowcase() {
                   </span>
                 </div>
                 <div>
-                  <h4 className="text-sm font-black text-slate-900">{feat.title}</h4>
-                  <p className="text-[11px] text-slate-500 mt-1 line-clamp-1">{feat.subtitle}</p>
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900 leading-tight">{feat.title}</h4>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5 sm:mt-1 line-clamp-1">{feat.subtitle}</p>
                 </div>
               </button>
             );
@@ -134,7 +134,7 @@ export default function AiFeaturesShowcase() {
         </div>
 
         {/* Tab Content Box */}
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-xl">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12 shadow-lg sm:shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6">

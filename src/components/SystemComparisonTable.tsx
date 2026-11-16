@@ -55,23 +55,28 @@ export default function SystemComparisonTable() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 border-b border-slate-200 text-slate-900">
+    <section className="py-14 sm:py-24 bg-slate-50 border-b border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs font-black text-amber-600 uppercase tracking-widest block mb-2">
             IT Yöneticileri ve Satın Alma Rehberi
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900">
             BYOD vs. Android (VBS) vs. Windows (Room System)
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-600 text-xs sm:text-base">
             Odanızın altyapısına ve toplantı platformu tercihinize göre en doğru PanaCast 50 modelini belirleyin.
           </p>
         </div>
 
+        {/* Mobile Horizontal Scroll Hint */}
+        <div className="sm:hidden flex items-center justify-center gap-1.5 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-xl py-2 px-3 mb-3 font-semibold">
+          <span>👉 Tabloyu sağa-sola kaydırarak tüm özellikleri inceleyebilirsiniz</span>
+        </div>
+
         {/* Comparison Grid Table */}
-        <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-xl">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto touch-scroll rounded-2xl sm:rounded-3xl border border-slate-200 bg-white shadow-lg sm:shadow-xl">
+          <table className="w-full min-w-[680px] text-left text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-200 bg-slate-100/70">
                 <th className="p-5 font-bold text-slate-500 w-1/4">Özellikler</th>

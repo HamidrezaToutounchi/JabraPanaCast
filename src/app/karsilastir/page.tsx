@@ -12,11 +12,11 @@ export const metadata = {
 
 export default function ComparePage() {
   return (
-    <div className="py-16 bg-slate-50 text-slate-900">
+    <div className="py-10 sm:py-16 bg-slate-50 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-amber-600 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-amber-600 mb-6 sm:mb-8 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Ana Sayfaya Dön</span>
@@ -26,7 +26,7 @@ export default function ComparePage() {
         <SystemComparisonTable />
 
         {/* Decision Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
             <h4 className="text-lg font-black text-slate-900 mb-2">Ne Zaman BYOD Seçmelisiniz?</h4>
             <p className="text-xs text-slate-600 leading-relaxed">
